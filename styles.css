@@ -63,3 +63,138 @@ button {
   padding: 1rem 2rem;
   text-rendering: inherit;
 }
+
+#app {
+  background: #fff;
+  bottom: 0;
+  display: none;
+  left: 0;
+  overflow: hidden scroll;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#top {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+#thread {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  gap: 4px;
+}
+#avatar {
+  background: #365;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+}
+
+#scroll {
+  padding: 1rem;
+}
+
+#tools {
+  bottom: 0;
+  padding: 1rem;
+  position: absolute;
+  width: 100vw;
+}
+#text {
+  border: 1px solid #bbb;
+  border-radius: 1.25rem;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  position: relative;
+}
+#text:empty:not(:focus):before {
+  color: #bbb;
+  content: attr(data-placeholder);
+}
+#text:not(:empty) + #send {
+  display: flex;
+}
+#send {
+  align-items: center;
+  background: #06f;
+  border-radius: 50%;
+  color: #fff;
+  display: none;
+  font-size: 20px;
+  height: 2rem;
+  justify-content: center;
+  position: absolute;
+  right: 21px;
+  bottom: 21px;
+  width: 2rem;
+}
+:focus {
+  outline-color: #365;
+}
+
+.bubble {
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+.ai {
+  background: #e6e7ed;
+  border-bottom-left-radius: 0;
+  margin-right: 2rem;
+}
+.me {
+  background: #06f;
+  border-bottom-right-radius: 0;
+  color: #fff;
+  margin-left: 2rem;
+}
+
+/* https://codemyui.com/imessage-typing-indicator-in-css/ */
+#typing {
+  animation: 2s bulge infinite ease-out;
+  background-color: #e6e7ed;
+  border-radius: 50px;
+  display: flex;
+  flex-shrink: 1;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  visibility: hidden;
+  width: 6rem;
+  will-change: transform;
+}
+#typing span {
+  background-color: #9e9ea1;
+  border-radius: 50%;
+  height: 1rem;
+  margin: 0 2px;
+  opacity: 0.4;
+  width: 1rem;
+}
+#typing span:nth-of-type(1) {
+  animation: 1s blink infinite 0.3333s;
+}
+#typing span:nth-of-type(2) {
+  animation: 1s blink infinite 0.6666s;
+}
+#typing span:nth-of-type(3) {
+  animation: 1s blink infinite 1s;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes bulge {
+  50% {
+    transform: scale(1.05);
+  }
+}
