@@ -39,9 +39,10 @@ body {
 }
 
 #tools {
+  background: #fff;
   bottom: 0;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   width: 100vw;
 }
 #text {
